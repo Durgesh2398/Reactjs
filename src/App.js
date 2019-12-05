@@ -29,20 +29,17 @@ import './App.css';
 
 
 class App extends Component {
+  
+  constructor() {
+    super();
+    this.state = {
+      subscribersListToShow: []
+    }
+  }
+  
   render() {
 
-    let subscribers = [
-      {
-        id: 1,
-        name: "Durgesh",
-        phone: "9356196308"
-      },
-      {
-        id: 2,
-        name: "Durgesh Kumar",
-        phone: "9023628980"
-      }
-    ];
+    
 
     return (
       <div>
@@ -56,7 +53,7 @@ class App extends Component {
 
 
           {
-            subscribers.map(sub => {
+            this.state.subscribersListToShow.map(sub => {
               return <div key={sub.id} className="grid-container">
                 <span className="grid-item">{sub.name}</span>
                 <span className="grid-item">{sub.phone}</span>
